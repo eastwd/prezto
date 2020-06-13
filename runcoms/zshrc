@@ -23,26 +23,25 @@ alias la="ls -a"
 alias ll="ls -l"
 alias rmrf="rm -rf"
 alias ps="ps -ef"
+
 alias vibash="vim ~/.bashrc"
 alias sobash="source ~/.bashrc"
+alias vizsh="vim ~/.zshrc"
+alias sozsh="source ~/.zshrc"
+
 alias vi="vim"
 alias v="vim"
 alias cdg="cd $GOPATH/src"
+
 #git commands
 alias add='git add'
 alias branch='git branch'
 alias checkout='git checkout'
-alias clone='git clone'
-alias commit='git commit -m'
-alias pull='git pull'
-alias push='git push'
 alias gclear='git fetch --prune'
 alias gbranch='git branch -a'
 alias gdbranch='git branch -D'
 alias gcom='git add .;git commit -m "fix";git push'
 alias gurl='git remote get-url origin'
-alias gconfig='git config user.name bandoshintaro;git config user.email bando142141@gmail.com'
-alias ggconfig='git config --global user.name bandoshintaro;git config --global user.email bando142141@gmail.com'
 alias subclone='git clone --recursive'
 
 
@@ -55,3 +54,5 @@ export GO111MODULE=on
 
 export PATH=$PATH:$HOME/go/bin
 source <(kubectl completion zsh)
+
+alias -s {md,txt,json,yaml,yml,toml,rs,go,cs,ts,html}=vim
