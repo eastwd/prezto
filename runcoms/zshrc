@@ -49,3 +49,5 @@ export PATH=$PATH:$HOME/go/bin
 source <(kubectl completion zsh)
 
 alias -s {md,txt,json,yaml,yml,toml,rs,go,cs,ts,html}=vim
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
