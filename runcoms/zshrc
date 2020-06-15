@@ -10,4 +10,44 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+if [ -e /usr/local/share/zsh-completions ]; then
+    fpath=(/usr/local/share/zsh-completions $fpath)
+fi
+
+if [ -e /usr/local/share/zsh/site-functinos ]; then
+    fpath=(/usr/local/share/zsh/site-functions $fpath)
+fi
+
 # Customize to your needs...
+alias la="ls -a"
+alias ll="ls -l"
+alias rmrf="rm -rf"
+alias ps="ps -ef"
+
+alias vibash="vim ~/.bashrc"
+alias sobash="source ~/.bashrc"
+alias vizsh="vim ~/.zshrc"
+alias sozsh="source ~/.zshrc"
+
+alias vi="vim"
+alias v="vim"
+alias cdg="cd $GOPATH/src"
+
+#git commands
+alias gclear='git fetch --prune'
+alias gcom='git add .;git commit -m "fix";git push'
+alias gurl='git remote get-url origin'
+alias subclone='git clone --recursive'
+
+
+#docker commands
+alias d='docker'
+alias dc='docker-compose'
+export GO111MODULE=on
+
+export PATH=$PATH:$HOME/go/bin
+source <(kubectl completion zsh)
+
+alias -s {md,txt,json,yaml,yml,toml,rs,go,cs,ts,html}=vim
+
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
