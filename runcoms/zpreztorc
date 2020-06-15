@@ -34,6 +34,8 @@ zstyle ':prezto:load' pmodule \
   'directory' \
   'spectrum' \
   'utility' \
+  'git' \
+  'syntax-highlighting' \
   'completion' \
   'prompt'
 
@@ -222,3 +224,5 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # before deleting or overwriting files. Set to 'no' to disable this safer
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'yes'
+autoload -Uz compinit
+compinit
