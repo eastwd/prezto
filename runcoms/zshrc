@@ -27,6 +27,7 @@ alias ps="ps -ef"
 alias vibash="vim ~/.bashrc"
 alias sobash="source ~/.bashrc"
 alias vizsh="vim ~/.zshrc"
+alias vizshl='vim ~/.zshrc.local'
 alias sozsh="source ~/.zshrc"
 
 alias vi="vim"
@@ -34,20 +35,27 @@ alias v="vim"
 alias cdg="cd $GOPATH/src"
 
 #git commands
-alias gclear='git fetch --prune'
+alias gclear='git pull;git branch --merged | egrep -v "\*|master|main" | xargs git branch -D;git fetch --prune'
 alias gcom='git add .;git commit -m "fix";git push'
 alias gurl='git remote get-url origin'
 alias subclone='git clone --recursive'
 
+alias kindsh='docker exec kind-control-plane crictl'
+
 
 #docker commands
 alias d='docker'
-alias dc='docker-compose'
+alias dc='docker compose'
+alias compose='docker compose'
 export GO111MODULE=on
+alias dockersh='docker run --privileged --tty --interactive --pid=host alpine nsenter -t 1 -m'
 
 export PATH=$PATH:$HOME/go/bin
 source <(kubectl completion zsh)
+source <(helm completion zsh)
 
-alias -s {md,txt,json,yaml,yml,toml,rs,go,cs,ts,html}=vim
+alias -s {sh,md,txt,json,yaml,yml,toml,rs,go,cs,ts,html}=vim
 
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
